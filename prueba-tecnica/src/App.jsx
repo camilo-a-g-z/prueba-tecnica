@@ -8,6 +8,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Login from "./components/Pages/Login/Login";
 import Frutas from "./components/Pages/Frutas/Frutas";
 import Signup from "./components/Pages/Signup/Signup";
+import { loginService } from "./services/login.service";
 
 const auth = getAuth(appFirebase);
 
@@ -24,9 +25,8 @@ function App() {
 
   return (
     <>
-      hola
       <div>
-        {firebaseUser !== null ? <Frutas user={firebaseUser} /> : <Signup />}
+        {firebaseUser !== null ? <Frutas user={firebaseUser} /> : <Login />}
       </div>
     </>
   );
