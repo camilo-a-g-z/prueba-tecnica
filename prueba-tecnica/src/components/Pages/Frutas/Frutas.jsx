@@ -8,7 +8,7 @@ const Frutas = ({ user }) => {
     loginService.logout();
   };
   const [frutas, setFrutas] = React.useState([]);
-
+  //Almacenar las frutas en el estado y mostrarlas en la vista
   React.useEffect(() => {
     frutasService.getFrutas().then((data) => {
       setFrutas(data);

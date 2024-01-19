@@ -5,15 +5,19 @@ import "./Login.css";
 
 const Login = () => {
   const Login = async (e) => {
+    //Evitar que se recargue la pagina
     e.preventDefault();
+    //Obtener los datos del formulario
     const email = e.target.email.value;
     const password = e.target.password.value;
+    //Validar que los campos no esten vacios
     try {
+      //Llamar al servicio de login y enviar los datos de login
       const user = await loginService.login(email, password);
       window.location.href = "/";
       console.log(user);
     } catch (error) {
-      console.log(error);
+      window.alert("Usuario o contraseña incorrectos");
     }
   };
   return (

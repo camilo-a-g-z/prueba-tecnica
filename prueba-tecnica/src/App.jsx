@@ -13,8 +13,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 const auth = getAuth(appFirebase);
 
 function App() {
+  //Estado de usuario
   const [firebaseUser, setFirebaseUser] = React.useState(null);
-
+  //Verificar si el usuario esta logueado
   onAuthStateChanged(auth, (user) => {
     if (user) {
       setFirebaseUser(user);
@@ -22,7 +23,6 @@ function App() {
       setFirebaseUser(null);
     }
   });
-  //
   return (
     <>
       <BrowserRouter>
