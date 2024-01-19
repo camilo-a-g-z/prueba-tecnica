@@ -1,6 +1,7 @@
 import React from "react";
 import { loginService } from "../../../services/login.service";
 import { frutasService } from "../../../services/frutas.service";
+import "./Frutas.css";
 
 const Frutas = ({ user }) => {
   const cerrarSesion = () => {
@@ -15,13 +16,19 @@ const Frutas = ({ user }) => {
   }, []);
 
   return (
-    <div>
-      Frutas {user.email}
-      <button onClick={cerrarSesion}>Cerrar sesion</button>
+    <div className="body">
+      <div className="titulo">Bienvenido {user.email}</div>
+      <button onClick={cerrarSesion} className="boton">
+        Cerrar sesion
+      </button>
       {frutas.map((fruta) => (
-        <div id={fruta.id}>
-          <h3>{fruta.nombre}</h3>
-          <img src={fruta.poster} alt={fruta.nombre} />
+        <div className="cards">
+          <div className="title">
+            <h1>{fruta.nombre}</h1>
+          </div>
+          <div className="image">
+            <img src={fruta.poster} alt={fruta.nombre} />
+          </div>
         </div>
       ))}
     </div>

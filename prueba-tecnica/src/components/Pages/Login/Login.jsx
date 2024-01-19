@@ -1,6 +1,7 @@
 import React from "react";
 
 import { loginService } from "../../../services/login.service";
+import "./Login.css";
 
 const Login = () => {
   const Login = async (e) => {
@@ -16,14 +17,25 @@ const Login = () => {
     }
   };
   return (
-    <div>
+    <div className="body">
       <form onSubmit={Login}>
-        <input type="text" placeholder="correo" id="email" />
-        <input type="text" placeholder="password" id="password" />
-        <button>Iniciar sesion</button>
+        <h1 className="mainTitle">Iniciar sesión</h1>
+        <div className="form">
+          <div className="grupo">
+            <input type="text" placeholder="Correo" id="email" />
+          </div>
+          <div className="grupo">
+            <input type="password" placeholder="Contraseña" id="password" />
+          </div>
+          <button className="boton">Iniciar sesion</button>
+        </div>
       </form>
-      <h1>Registrarse</h1>
-      <a href="/signup">Registrarse</a>
+      <div className="register">
+        <h1>Registrate</h1>
+        <a className="link" href="/signup">
+          Registrate
+        </a>
+      </div>
     </div>
   );
 };

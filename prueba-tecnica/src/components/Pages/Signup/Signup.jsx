@@ -1,6 +1,7 @@
 import React from "react";
 
 import { loginService } from "../../../services/login.service";
+import "./Signup.css";
 
 const Signup = () => {
   const [user, setUser] = React.useState(false);
@@ -19,17 +20,29 @@ const Signup = () => {
     }
   };
   return (
-    <div>
-      <h1>Signup</h1>
+    <div className="body">
       <form onSubmit={functionAuth}>
-        <input type="text" placeholder="nombre" id="name" />
-        <input type="text" placeholder="apellido" id="lastName" />
-        <input type="text" placeholder="correo" id="email" />
-        <input type="text" placeholder="password" id="password" />
-        <button>Registrarse</button>
+        <h1 className="mainTitle">Registrate</h1>
+        <div className="form">
+          <div className="grupo">
+            <input type="text" placeholder="Nombre" id="name" />
+          </div>
+          <div className="grupo">
+            <input type="text" placeholder="Apellido" id="lastName" />
+          </div>
+          <div className="grupo">
+            <input type="text" placeholder="Correo" id="email" />
+          </div>
+          <div className="grupo">
+            <input type="password" placeholder="Contraseña" id="password" />
+          </div>
+          <button className="boton">Registrarse</button>
+        </div>
       </form>
-      <h1>Iniciar sesion</h1>
-      <a href="/">Iniciar sesion</a>
+      <h1>¿Ya estas registrado?</h1>
+      <a className="link" href="/">
+        Iniciar sesion
+      </a>
     </div>
   );
 };
