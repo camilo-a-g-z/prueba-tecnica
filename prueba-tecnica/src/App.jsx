@@ -8,7 +8,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Login from "./components/Pages/Login/Login";
 import Frutas from "./components/Pages/Frutas/Frutas";
 import Signup from "./components/Pages/Signup/Signup";
-import { loginService } from "./services/login.service";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const auth = getAuth(appFirebase);
 
@@ -22,12 +22,27 @@ function App() {
       setFirebaseUser(null);
     }
   });
-
+  //
   return (
     <>
-      <div>
-        {firebaseUser !== null ? <Frutas user={firebaseUser} /> : <Login />}
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              firebaseUser !== null ? <Frutas user={firebaseUser} /> : <Login />
+            }
+          />
+          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/frutas"
+            element={
+              firebaseUser !== null ? <Frutas user={firebaseUser} /> : <Login />
+            }
+          />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
