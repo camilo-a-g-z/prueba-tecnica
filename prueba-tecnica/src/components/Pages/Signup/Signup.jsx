@@ -28,6 +28,8 @@ const Signup = () => {
         <input type="text" placeholder="password" id="password" />
         <button>Registrarse</button>
       </form>
+      <h1>Iniciar sesion</h1>
+      <a href="/">Iniciar sesion</a>
     </div>
   );
 };

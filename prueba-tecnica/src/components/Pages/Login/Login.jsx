@@ -9,6 +9,7 @@ const Login = () => {
     const password = e.target.password.value;
     try {
       const user = await loginService.login(email, password);
+      window.location.href = "/";
       console.log(user);
     } catch (error) {
       console.log(error);
@@ -21,6 +22,8 @@ const Login = () => {
         <input type="text" placeholder="password" id="password" />
         <button>Iniciar sesion</button>
       </form>
+      <h1>Registrarse</h1>
+      <a href="/signup">Registrarse</a>
     </div>
   );
 };

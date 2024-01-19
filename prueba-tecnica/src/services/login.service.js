@@ -52,6 +52,8 @@ export const loginService = {
       const user = signOut(auth)
         .then(() => {
           console.log("sesion cerrada");
+          //redireccionar a login
+          window.location = "/";
         })
         .catch((error) => {
           console.log(error);
