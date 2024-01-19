@@ -17,20 +17,22 @@ const Frutas = ({ user }) => {
 
   return (
     <div className="body">
-      <div className="titulo">Bienvenido {user.email}</div>
+      <div className="title">Bienvenido {user.email}</div>
       <button onClick={cerrarSesion} className="boton">
         Cerrar sesion
       </button>
-      {frutas.map((fruta) => (
-        <div className="cards">
-          <div className="title">
-            <h1>{fruta.nombre}</h1>
+      <div className="container">
+        {frutas.map((fruta) => (
+          <div className="cards">
+            <div className="title">
+              <h1>{fruta.nombre}</h1>
+            </div>
+            <div className="image">
+              <img src={fruta.poster} alt={fruta.nombre} />
+            </div>
           </div>
-          <div className="image">
-            <img src={fruta.poster} alt={fruta.nombre} />
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
